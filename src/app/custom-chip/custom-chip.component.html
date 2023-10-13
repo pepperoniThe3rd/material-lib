@@ -1,0 +1,31 @@
+<mat-chip *ngIf="chipType=='primary'" [class]="primaryChipType+'-chip'">
+  {{chipText}}
+  <button matChipRemove class="closeButton" *ngIf="primaryChipAction=='cancel'" [attr.aria-label]="'remove '">
+    <mat-icon>close</mat-icon>
+  </button>
+  <button matChipRemove class="closeButton" *ngIf="primaryChipAction=='check'">
+    <mat-icon>check_circle</mat-icon>
+  </button>
+  <span class="chipLabel" *ngIf="primaryChipAction=='label'">
+    {{chipLabel}}
+  </span>
+</mat-chip>
+
+<mat-chip *ngIf="chipType=='secondary'" [class]="secondaryChipColor+'-chip'">
+  <mat-icon *ngIf="prefixIcon">{{prefixIcon}}</mat-icon>
+  <span>{{chipText}}</span>
+  <mat-icon *ngIf="sufixIcon">{{sufixIcon}}</mat-icon>
+</mat-chip>
+
+<mat-chip *ngIf="chipType=='basic'" class="classic-square-chip">
+  <ng-container *ngTemplateOutlet="basicChipTemplate"></ng-container>
+</mat-chip>
+
+<div *ngIf="chipType=='group'" class="custom-chip-group">
+  <mat-chip class="chip-1"><ng-container *ngTemplateOutlet="groupChipTemplateOne"></ng-container></mat-chip>
+  <mat-chip class="chip-2"><ng-container *ngTemplateOutlet="groupChipTemplateTwo"></ng-container></mat-chip>
+</div>
+
+<!-- <mat-chip *ngIf="chipType=='basic'" class="classic-square-chip">
+    <ng-container *ngTemplateOutlet="basicChipTemplate"></ng-container>
+</mat-chip> -->

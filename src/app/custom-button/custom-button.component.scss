@@ -1,0 +1,86 @@
+.custom-stroked-button {
+  border-color: #C5CAD2 !important;
+  /* Change the border color to #667085 */
+  color: #667085 !important;
+}
+
+::ng-deep .custom span.mdc-button__label {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.custom-flat-button-dark {
+  background-color: #8383FF !important;
+  /* Change the border color to #667085 */
+  color: #fff !important;
+}
+
+.custom-flat-button-light {
+  background-color: #F1F2F4 !important;
+  /* Change the border color to #667085 */
+  color: #535968 !important;
+}
+
+.custom-button {
+  color: #8383FF !important;
+}
+
+.custom {
+  padding: 20px 10px !important;
+}
+
+.custom-stroked-button.active-1 {
+  background-color: #F4F3FF;
+  color: #4343C6 !important;
+  box-shadow: 0 0 4px rgba(131, 131, 255, 1);
+  border-color: #4343C6 !important;
+}
+
+.custom-stroked-button.active-2 {
+  // background-color: #F4F3FF;
+  color: #4343C6 !important;
+  box-shadow: 0 0 4px rgba(131, 131, 255, 1);
+  border-color: #4343C6 !important;
+}
+
+.custom-stroked-button.active-3 {
+  position: relative;
+  background-color: #F4F3FF;
+  color: #4343C6 !important;
+  box-shadow: 0 0 4px rgba(131, 131, 255, 1);
+  border-color: #4343C6 !important;
+
+  .checked {
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    z-index: 2;
+    margin: 0px;
+  }
+}
+
+.mat-button-toggle-group {
+  border-color: #C5C8D1 !important;
+}
+
+.custom-selected-button.mat-button-toggle-checked {
+  background-color: transparent;
+  border: 1px solid #8383FF;
+  /* Change the border color to #8383FF */
+  color: #4343C6 !important;
+}
+
+.custom-selected-button.mat-button-toggle-checked:first-child {
+  border-top-left-radius: 4px;
+  /* Adjust the border radius as needed */
+  border-bottom-left-radius: 4px;
+}
+
+.custom-last-button.mat-button-toggle:last-child {
+  border-top-right-radius: 4px;
+  /* Adjust the border radius as needed */
+  border-bottom-right-radius: 4px;
+  /* Adjust the border radius as needed */
+}

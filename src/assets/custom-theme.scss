@@ -1,0 +1,45 @@
+@import '../node_modules//@angular/material/theming';
+
+@include mat-core();
+
+$custom-blue: #8383FF;
+$custom-blue-palette: (
+  50: $custom-blue,
+  100: $custom-blue,
+  200: $custom-blue,
+  300: $custom-blue,
+  400: $custom-blue,
+  500: $custom-blue,
+  600: $custom-blue,
+  700: $custom-blue,
+  800: $custom-blue,
+  900: $custom-blue,
+  A100: $custom-blue,
+  A200: $custom-blue,
+  A400: $custom-blue,
+  A700: $custom-blue,
+  contrast: (
+    50: $custom-blue,
+    100: $custom-blue,
+    200: $custom-blue,
+    300: $custom-blue,
+    400: $custom-blue,
+    500: $custom-blue,
+    600: $custom-blue,
+    700: $custom-blue,
+    800: $custom-blue,
+    900: $custom-blue,
+    A100: $custom-blue,
+    A200: $custom-blue,
+    A400: $custom-blue,
+    A700: $custom-blue,
+  )
+);
+
+
+$my-primary: mat-palette($md-8383ff);
+$my-accent: mat-palette($md-8383ff);
+
+$my-theme: mat-light-theme($my-primary, $my-accent);
+
+@include angular-material-theme($my-theme);

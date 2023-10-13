@@ -1,0 +1,23 @@
+<div style="display: flex; flex-direction: column;" [ngStyle]="{'width': width}">
+  <mat-list class="custom-list">
+    <mat-list-item class="list-item" *ngFor="let item of items" (click)="toggleItem(item)"
+      [class.selected]="selectedItems.includes(item)">
+      <mat-label class="title">{{item}}</mat-label>
+      <mat-checkbox class="custom-frame" color="primary" *ngIf="selectedItems.includes(item)"
+        [checked]="selectedItems.includes(item)"></mat-checkbox>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-form-field class="example-form-field" *ngIf="isOpen">
+    <mat-label>Add Custom</mat-label>
+    <input matInput type="text" [(ngModel)]="value">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Add" (click)="addItem(); isOpen=false; value=null">
+      <mat-icon>check</mat-icon>
+    </button>
+    <button *ngIf="!value" matSuffix mat-icon-button aria-label="Clear" (click)="isOpen=false; value=null">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <app-custom-button [buttonType]="'basic'" (buttonClicked)="isOpen=true; value=null"
+    [prefixIcon]="'add_circle_outline'" [buttonText]="'Add Custom'"></app-custom-button>
+</div>

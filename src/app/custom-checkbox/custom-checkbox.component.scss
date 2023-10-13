@@ -1,0 +1,19 @@
+::ng-deep .custom-checkbox.mat-mdc-checkbox.mat-mdc-checkbox-checked{
+    .mdc-checkbox__background{
+        background-color: #8383FF !important;
+        border-color: #8383FF !important;
+    }
+
+    label{
+        font-weight: 700;
+        color: #4343C6;
+    }
+}
+
+::ng-deep .custom-checkbox.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+    border-color: #C5C8D1 !important;
+}
+
+::ng-deep .custom-checkbox.mat-mdc-checkbox label{
+    color: #667085;
+}

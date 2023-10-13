@@ -1,0 +1,119 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="container pb-5">
+
+  <!-- Select -->
+  <div class="mb-3 border rounded p-4">
+    <h4>Multi Select:</h4>
+    <app-custom-select></app-custom-select>
+  </div>
+
+  <!-- Expansion Panel -->
+  <div class="mb-3 border rounded p-4">
+    <h4>Expansion Panel:</h4>
+    <app-custom-accordian [accordianDescription]="" [accordianTitle]="'Begin'" [deleteButton]="true" [toggleButton]="true"
+      [accordianContent]="contentTemplate" [accordianFooter]="footerTemplate"></app-custom-accordian>
+
+    <ng-template #footerTemplate>
+      <div class="d-flex justify-content-end w-100">
+        <app-custom-button [buttonType]="'flat'" [flatType]="'light'" [buttonText]="'Cancel'"></app-custom-button>
+        <app-custom-button [buttonType]="'flat'" [flatType]="'dark'" [buttonText]="'Save Changes'"
+          class="ms-2"></app-custom-button>
+      </div>
+    </ng-template>
+    <ng-template #contentTemplate>
+      <div class="d-flex w-100">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sed vitae repellat dignissimos, ipsam
+        consequuntur rerum corrupti nobis voluptatem, ea magnam illo eius labore culpa, minima quibusdam sit inventore
+        praesentium.
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Cards -->
+  <div class="mb-3 border rounded p-4">
+    <h4>Cards:</h4>
+    <app-custom-card [cardIconTemplate]="cardIcon" [cardButtonText]="'Use Template'"
+      [cardFooterTemplate]="cardFooter" [cardMenuTemplate]="cardMenu"></app-custom-card>
+
+    <ng-template #cardIcon>
+      <mat-icon color="primary">account_balance</mat-icon>
+    </ng-template>
+
+    <ng-template #cardMenu>
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </ng-template>
+
+    <ng-template #cardFooter>
+      <div class="d-flex justify-content-start w-100">
+        <app-custom-chip chipType="secondary" [chipText]="'Completed'"
+          [secondaryChipColor]="'success'"></app-custom-chip>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Chip -->
+  <div class="border rounded p-4 mb-3">
+    <h4>Chip:</h4>
+    <app-custom-chip [chipText]="'Completed'" [chipType]="'secondary'"></app-custom-chip>
+    <app-custom-chip [chipText]="'Completed'" [chipType]="'primary'" [primaryChipAction]="'cancel'"></app-custom-chip>
+    <app-custom-chip [chipText]="'Completed'" [chipType]="'primary'" [primaryChipAction]="'cancel'"
+      [primaryChipType]="'square'"></app-custom-chip>
+    <app-custom-chip [chipText]="'18%'" [chipType]="'secondary'" [secondaryChipColor]="'error'"
+      [prefixIcon]="'arrow_downward'"></app-custom-chip>
+  </div>
+
+  <div class="border rounded p-4 mb-3">
+    <h4>Stepper:</h4>
+    <app-custom-stepper></app-custom-stepper>
+  </div>
+
+  <!-- List -->
+  <div class="border rounded p-4 mb-3">
+    <h4>List:</h4>
+    <app-custom-list></app-custom-list>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="border rounded p-4 mb-3">
+    <h4>Checkbox:</h4>
+    <app-custom-checkbox [checkboxText]="'Text Example'"></app-custom-checkbox>
+  </div>
+
+  <!-- Slider -->
+  <div class="border rounded p-4 mb-3">
+    <h4>Slider:</h4>
+    <app-slide-toggle></app-slide-toggle>
+  </div>
+
+  <!-- Buttons -->
+  <div class="border rounded p-4 mb-3">
+    <h4>Buttons:</h4>
+    <!-- <div class="margin-right: 1rem">
+      <app-custom-button [buttonType]="'basic'" [prefixIcon]="'account_balance'"
+        [sufixTemplate]="icon"></app-custom-button>
+    </div> -->
+    <div class="margin-right: 1rem">
+      <app-custom-button [activeType]="'2'" [buttonType]="'stroke'" [prefixTemplate]="icon" [sufixTemplate]="icon"></app-custom-button>
+      <ng-template #icon>
+        <mat-icon>account_balance</mat-icon>
+      </ng-template>
+    </div>
+    <!-- <div class="margin-right: 1rem">
+      <app-custom-button [buttonType]="'basic'" [prefixTemplate]="icon" [sufixTemplate]="icon"></app-custom-button>
+      <ng-template #icon>
+        <mat-icon>account_balance</mat-icon>
+      </ng-template>
+    </div> -->
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<button *ngIf="buttonType=='stroke'" mat-stroked-button (click)="onClick()" class="custom custom-stroked-button"
+  [ngClass]="isActive? 'active-'+ activeType: ''">
+  <mat-icon class="checked" *ngIf="activeType=='3' && isActive">check_circle</mat-icon>
+  <div *ngIf="prefixTemplate" class="icon-left" style="margin-right: 5px;">
+    <ng-container *ngTemplateOutlet="prefixTemplate"></ng-container>
+  </div>
+  <mat-icon style="margin-right: 5px;" *ngIf="prefixIcon">{{prefixIcon}}</mat-icon>
+
+  <span>{{ buttonText }}</span>
+
+  <mat-icon *ngIf="sufixIcon" style="margin-left: 5px;">{{sufixIcon}}</mat-icon>
+  <div *ngIf="sufixTemplate" class="icon-left" style="margin-left: 5px;">
+    <ng-container *ngTemplateOutlet="sufixTemplate"></ng-container>
+  </div>
+</button>
+
+<button *ngIf="buttonType=='flat'" mat-flat-button (click)="onClick()" [class]="'custom custom-flat-button-'+ flatType"
+  [ngClass]="isActive? 'active-'+ activeType: ''">
+  <div *ngIf="prefixTemplate" class="icon-left" style="margin-right: 5px;">
+    <ng-container *ngTemplateOutlet="prefixTemplate"></ng-container>
+  </div>
+  <mat-icon style="margin-right: 5px;" *ngIf="prefixIcon">{{prefixIcon}}</mat-icon>
+  <span>{{ buttonText }}</span>
+  <mat-icon *ngIf="sufixIcon" style="margin-left: 5px;">{{sufixIcon}}</mat-icon>
+  <div *ngIf="prefixTemplate" class="icon-left" style="margin-left: 5px;">
+    <ng-container *ngTemplateOutlet="sufixTemplate"></ng-container>
+  </div>
+</button>
+
+<button *ngIf="buttonType=='basic' || '' " mat-button (click)="onClick()" class="custom custom-button"
+  [ngClass]="isActive? 'active-'+ activeType: ''">
+  <div *ngIf="prefixTemplate" class="icon-left" style="margin-right: 5px;">
+    <ng-container *ngTemplateOutlet="prefixTemplate"></ng-container>
+  </div>
+  <mat-icon style="margin-right: 5px;" *ngIf="prefixIcon">{{prefixIcon}}</mat-icon>
+  <span>{{ buttonText }}</span>
+  <mat-icon *ngIf="sufixIcon" style="margin-left: 5px;">{{sufixIcon}}</mat-icon>
+  <div *ngIf="prefixTemplate" class="icon-left" style="margin-left: 5px;">
+    <ng-container *ngTemplateOutlet="sufixTemplate"></ng-container>
+  </div>
+</button>
+
+<mat-button-toggle-group *ngIf="buttonType=='group'">
+  <mat-button-toggle class="custom-selected-button" value="option1">Option 1</mat-button-toggle>
+  <mat-button-toggle class="custom-selected-button" value="option2">Option 2</mat-button-toggle>
+  <mat-button-toggle class="custom-selected-button" value="option3">Option 3</mat-button-toggle>
+  <mat-button-toggle class="custom-selected-button" value="option4">Option 4</mat-button-toggle>
+</mat-button-toggle-group>

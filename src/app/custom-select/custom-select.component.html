@@ -1,0 +1,17 @@
+<mat-form-field class="custom-multi-select w-100">
+  <mat-select [formControl]="formCtrl" [multiple]="isMultiple" class="w-100">
+    <mat-select-trigger>
+      <mat-chip-listbox>
+        <mat-chip-row style="background-color: #f4f3ff" *ngFor="let selectedItem of formCtrl.value"
+          (removed)="remove(selectedItem)" [removable]="true" selected>
+          {{selectedItem}}
+          <button matChipRemove [attr.aria-label]="'remove ' + selectedItem">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-chip-row>
+      </mat-chip-listbox>
+    </mat-select-trigger>
+
+    <mat-option *ngFor="let option of allOptions" [value]="option">{{option}}</mat-option>
+  </mat-select>
+</mat-form-field>

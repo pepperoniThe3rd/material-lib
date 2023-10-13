@@ -1,0 +1,26 @@
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel class="custom-accordian">
+      <mat-expansion-panel-header>
+        <mat-panel-title >
+          <div>
+            <p style="font-size: 16px;">{{accordianTitle}}</p>
+            <P *ngIf="accordianDescription" style="font-size: 14px; margin-top: 5px; color: #667085;">{{accordianDescription}}</P>
+          </div>
+        </mat-panel-title>
+        <mat-panel-description>
+            <mat-icon *ngIf="deleteButton" class="delete-icon" style="margin-right: 10px;" (click)="onDeleteBtn()">delete_outline</mat-icon>
+            <app-slide-toggle *ngIf="toggleButton" (onSliderChange)="onToggleBtn()"></app-slide-toggle>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="accordionContent">
+          <ng-container *ngTemplateOutlet="accordianContent"></ng-container>
+        </div>
+        <hr />
+        <div class="accordianFooter">
+          <ng-container *ngTemplateOutlet="accordianFooter"></ng-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>

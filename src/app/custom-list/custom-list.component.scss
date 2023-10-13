@@ -1,0 +1,60 @@
+/* Apply custom styles to the Mat List */
+::ng-deep .custom-frame {
+    & .mdc-checkbox__background {
+      border-radius: 50% !important;
+        
+      & .mdc-checkbox__checkmark{
+        width: 80%;
+        left: 1.4px;
+      }
+    }
+  }
+  
+  .list-item{
+      margin-bottom: 12px;
+  }
+::ng-deep .custom-list{
+
+    .mdc-list-item{
+        min-height: 50px;
+        height: auto !important;
+    }
+    .mat-mdc-list-item-unscoped-content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .title {
+        color: #667085;
+        font-size: 14px;
+        line-height: 20px;
+        // font-weight: 600;
+        cursor: pointer;
+        white-space: normal;
+        word-break: break-all;
+        text-wrap: wrap; /* Use 'normal' to allow text to wrap within the container */
+        /* Or use 'break-word' to allow text to break and wrap onto the next line if it's too long */
+      }
+  }
+
+  /* Style for the selected list item */
+.custom-list .list-item.selected {
+    border: 1px solid #8383FF; /* Border color for the selected item */
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(131, 131, 255, 1); /* Shadow effect for the selected item */
+
+    .title {
+        color: #4343C6;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        white-space: normal;
+        word-break: break-all;
+        text-wrap: wrap; /* Use 'normal' to allow text to wrap within the container */
+        /* Or use 'break-word' to allow text to break and wrap onto the next line if it's too long */
+      }
+  }

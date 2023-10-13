@@ -1,0 +1,32 @@
+<mat-card class="custom-card" (click)="!cardButtonText? cardClick(): ''" [ngClass]="{'card-hover': !cardButtonText}"
+    [class]="isCardActive? 'card-active':''" [ngStyle]="{'width': customWidth}">
+    <mat-card-content>
+        <div class="cardIcon" *ngIf="cardIconTemplate">
+            <ng-container *ngTemplateOutlet="cardIconTemplate"></ng-container>
+        </div>
+
+        <div class="content">
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle style="margin-top: 7px;">Dog Breed</mat-card-subtitle>
+        </div>
+    </mat-card-content>
+
+    <!-- Add a mat-menu-trigger to the vertical dots icon -->
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="dots-button">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <!-- Define the mat-menu with your menu options -->
+    <mat-menu #menu="matMenu">
+        <ng-container *ngTemplateOutlet="cardMenuTemplate"></ng-container>
+        <!-- Add more menu items as needed -->
+    </mat-menu>
+
+    <mat-card-actions style="display: flex; flex-direction: column;" *ngIf="cardFooterTemplate || cardButtonText">
+        <button class="cardButton" *ngIf="cardButtonText">{{cardButtonText}}</button>
+
+        <div class="card-footer">
+            <ng-container *ngTemplateOutlet="cardFooterTemplate"></ng-container>
+        </div>
+    </mat-card-actions>
+</mat-card>
